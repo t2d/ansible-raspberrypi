@@ -1,0 +1,33 @@
+---
+
+- hosts: pi
+  roles:
+    - role: systemli.sshd
+      tags: sshd
+      when: ssh_key is defined
+    - role: systemli.hidden-service
+      tags: hidden_service
+      when: ssh_key is defined
+  tasks:
+    - name: Add public ssh key
+      authorized_key:
+        user: pi
+        key: "{{ lookup('file', '{{ ssh_key }}') }}"
+      when: ssh_key is defined
+
+    - name: Mount external HDD
+      mount:
+        path: /srv
+        src: "{{ hdd }}"
+        fstype: ext4
+        opts: noatime,noexec,nosuid
+        state: mounted
+      when: hdd is defined
+    when: ssh_key is defined
+
+- hosts: pi
+  roles:
+    - { role: debops.unattended_upgrades, tags: unattended_upgrades }
+    - { role: elboletaire.transmission, tags: transmission }
+    - { role: tschifftner.samba, tags: samba }
+
