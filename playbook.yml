@@ -5,9 +5,11 @@
     - role: systemli.sshd
       tags: sshd
       when: ssh_key is defined
+
     - role: systemli.hidden-service
       tags: hidden_service
       when: ssh_key is defined
+
   tasks:
     - name: Add public ssh key
       authorized_key:
@@ -23,7 +25,6 @@
         opts: noatime,noexec,nosuid
         state: mounted
       when: hdd is defined
-    when: ssh_key is defined
 
 - hosts: pi
   roles:
