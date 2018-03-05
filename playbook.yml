@@ -34,6 +34,26 @@
         owner: pi
       when: hdd is defined
 
+    - name: Install watchdog
+      apt:
+        name: watchdog
+        state: present
+      tags: watchdog
+
+    - name: Start watchdog
+      service:
+        name: watchdog
+        state: started
+        enabled: True
+      tags: watchdog
+
+    - name: Configure watchdog
+      lineinfile:
+        path: /etc/watchdog.conf
+        regexp: "#?watchdog-device\\s*="
+        line: "watchdog-device         = /dev/watchdog"
+      tags: watchdog
+
 - hosts: pi
   roles:
     - { role: debops.unattended_upgrades, tags: unattended_upgrades }

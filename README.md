@@ -8,6 +8,7 @@ Ansible playbook to do a basic config of a raspberry pi with:
  * external harddrive
  * transmission
  * unattended-upgrades
+ * watchdog
 
 Prepare raspberrypi
 -------------------
