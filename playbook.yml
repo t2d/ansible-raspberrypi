@@ -34,10 +34,13 @@
         owner: pi
       when: hdd is defined
 
-    - name: Install watchdog
+    - name: Install packages
       apt:
-        name: watchdog
+        name: "{{ item }}"
         state: present
+      with_items:
+        - p7zip-full
+        - watchdog
       tags: watchdog
 
     - name: Start watchdog
