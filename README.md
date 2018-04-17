@@ -3,10 +3,13 @@ ansible-raspberrypi
 
 Ansible playbook to do a basic config of a raspberry pi with:
 
+ * External harddrive
+ * [HiFiBerry](https://www.hifiberry.com/)
  * SSH
- * samba
- * external harddrive
- * transmission
+ * Samba
+ * [Raspotify](https://github.com/dtcooper/raspotify)
+ * [Transmission](https://transmissionbt.com/)
+ * Tor Onion Service
  * unattended-upgrades
  * watchdog
 
