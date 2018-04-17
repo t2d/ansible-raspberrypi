@@ -62,3 +62,5 @@
     - { role: debops.unattended_upgrades, tags: unattended_upgrades }
     - { role: elboletaire.transmission, tags: transmission }
     - { role: tschifftner.samba, tags: samba }
+    - { role: t2d.raspotify, tags: raspotify }
+    - { role: t2d.hifiberry, tags: hifiberry }
