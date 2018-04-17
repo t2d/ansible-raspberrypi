@@ -1,17 +1,20 @@
 ansible-raspberrypi
 ===================
 
-Ansible playbook to do a basic config of a raspberry pi with:
+Ansible playbook to do a basic config of a Raspberry Pi with:
 
  * External harddrive
- * [HiFiBerry](https://www.hifiberry.com/)
  * SSH
  * Samba
  * [Raspotify](https://github.com/dtcooper/raspotify)
  * [Transmission](https://transmissionbt.com/)
- * Tor Onion Service
  * unattended-upgrades
  * watchdog
+
+Available, but disabled on default:
+
+ * [HiFiBerry](https://www.hifiberry.com/)
+ * Tor Onion Service
 
 Prepare raspberrypi
 -------------------

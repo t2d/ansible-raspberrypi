@@ -63,4 +63,4 @@
     - { role: elboletaire.transmission, tags: transmission }
     - { role: tschifftner.samba, tags: samba }
     - { role: t2d.raspotify, tags: raspotify }
-    - { role: t2d.hifiberry, tags: hifiberry }
+    - { role: t2d.hifiberry, tags: hifiberry, when: hifiberry_enabled }
