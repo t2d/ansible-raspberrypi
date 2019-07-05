@@ -2,12 +2,15 @@
 
 - hosts: pi
   roles:
+    - role: drew-kun.rpi_expandfs
+      tags: rpi_expandfs
+
     - role: systemli.sshd
       tags: sshd
       when: ssh_key is defined
 
-    - role: systemli.hidden-service
-      tags: hidden_service
+    - role: systemli.onion
+      tags: onion
       when: ssh_key is defined
 
   tasks:
@@ -59,9 +62,9 @@
 
 - hosts: pi
   roles:
-    - { role: debops.unattended_upgrades, tags: unattended_upgrades }
-    - { role: elboletaire.transmission, tags: transmission }
+    - { role: jnv.unattended-upgrades, tags: unattended_upgrades }
+    - { role: chmduquesne.transmission, tags: transmission }
     - { role: tschifftner.samba, tags: samba }
     - { role: t2d.raspotify, tags: raspotify }
-    - { role: t2d.hifiberry, tags: hifiberry, when: hifiberry_enabled }
+    - { role: t2d.hifiberry, tags: hifiberry, when: hifiberry_enabled|bool }
     - { role: t2d.mopidy, tags: mopidy }

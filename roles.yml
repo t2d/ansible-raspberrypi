@@ -1,8 +1,9 @@
 - systemli.sshd
-- debops.unattended_upgrades
-- systemli.hidden-service
-- elboletaire.transmission
+- jnv.unattended-upgrades
+- systemli.onion
+- chmduquesne.transmission
 - tschifftner.samba
 - t2d.raspotify
 - t2d.hifiberry
 - t2d.mopidy
+- drew-kun.rpi_expandfs

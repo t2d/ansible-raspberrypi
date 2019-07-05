@@ -25,11 +25,8 @@ touch /media/t/boot/ssh
 ```
 
 * Boot raspberrypi
-* `ssh pi@raspberrypi.local`
-* `sudo raspi-config`
-  * 7 Advanced Options
-    * A1 Expand Filesystem
-* `sudo reboot`
+* Make sure you can ssh into raspberrypi
+  * `ssh pi@raspberrypi.local`
 
 Run ansible
 -----------
