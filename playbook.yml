@@ -68,3 +68,4 @@
     - { role: t2d.raspotify, tags: raspotify }
     - { role: t2d.hifiberry, tags: hifiberry, when: hifiberry_enabled|bool }
     - { role: t2d.mopidy, tags: mopidy }
+    - { role: t2d.tmux, tags: tmux }
