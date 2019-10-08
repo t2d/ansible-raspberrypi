@@ -43,21 +43,18 @@
         state: present
       with_items:
         - p7zip-full
-        - watchdog
-      tags: watchdog
 
-    - name: Start watchdog
-      service:
+    - name: Uninstall watchdog daemon
+      apt:
         name: watchdog
-        state: started
-        enabled: True
+        state: absent
       tags: watchdog
 
-    - name: Configure watchdog
+    - name: Configure systemd watchdog
       lineinfile:
-        path: /etc/watchdog.conf
-        regexp: "#?watchdog-device\\s*="
-        line: "watchdog-device         = /dev/watchdog"
+        path: /etc/systemd/system.conf
+        regexp: "#?RuntimeWatchdogSec"
+        line: "RuntimeWatchdogSec=20"
       tags: watchdog
 
 - hosts: pi

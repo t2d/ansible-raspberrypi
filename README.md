@@ -9,7 +9,7 @@ Ansible playbook to do a basic config of a Raspberry Pi with:
  * [Raspotify](https://github.com/dtcooper/raspotify)
  * [Transmission](https://transmissionbt.com/)
  * unattended-upgrades
- * watchdog
+ * Enable hardware watchdog
 
 Available, but disabled on default:
 
