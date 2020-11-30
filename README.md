@@ -19,9 +19,14 @@ Available, but disabled on default:
 Prepare raspberrypi
 -------------------
 
+Flash SD card and enable ssh access:
+
 ```
-sudo dd if=2017-11-29-raspbian-stretch-lite.img bs=1M of=/dev/mmcblk0 
-touch /media/t/boot/ssh
+wget https://downloads.raspberrypi.org/raspios_lite_armhf/images/raspios_lite_armhf-2020-08-24/2020-08-20-raspios-buster-armhf-lite.zip
+unzip 2020-08-20-raspios-buster-armhf-lite.zip
+sudo dd if=2020-08-20-raspios-buster-armhf-lite.img bs=1M of=/dev/mmcblk0
+mount /dev/mmcblk0p2 /mnt 
+touch /mnt/ssh
 ```
 
 * Boot raspberrypi
